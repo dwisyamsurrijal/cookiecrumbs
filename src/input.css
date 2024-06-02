@@ -5,3 +5,7 @@
 section{
     @apply my-20
 }
+
+.container{
+    @apply px-4
+}

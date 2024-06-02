@@ -30,9 +30,9 @@ module.exports = {
         "blue-water-zap": "#50ABF0",
       },
       screens: {
-        xl: "1200px",
-        "2xl": "1320px",
-        "3xl": "1400px",
+        xl: "900px",
+        "2xl": "1200px",
+        "3xl": "1600px",
       },
     },
   },
