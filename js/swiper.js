@@ -93,4 +93,3 @@ let productrecommended = new Swiper(".product-content-recommend", {
     },
   },
 });
-

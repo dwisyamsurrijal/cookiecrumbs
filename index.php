@@ -22,7 +22,7 @@
     <section id="banner" class="relative my-0">
       <img src="assets/banner.jpg" class="object-cover w-full md:h-[900px] h-[550px]" alt="Banner Image" />
       <div
-        class="absolute flex flex-col items-center justify-center w-full h-full gap-3 px-4 font-semibold text-white transform translate-x-1/2 translate-y-1/2 bg-black lg:gap-6 bg-opacity-50 right-1/2 bottom-1/2">
+        class="absolute flex flex-col items-center justify-center w-full h-full gap-3 px-4 font-semibold text-white transform translate-x-1/2 translate-y-1/2 bg-black bg-opacity-50 lg:gap-6 right-1/2 bottom-1/2">
 
         <h1 class="text-center ">Cari Cemilan Kue Kering Yang Lezat</h1>
         <h3 class="">CookieCrumbs Solusinya</h3>
@@ -35,7 +35,7 @@
     <section id="produk-kami" class="relative ">
       <div class="container flex flex-col gap-6 lg:gap-10 md:gap-8">
         <h2 class="font-semibold text-center">Produk Kami</h2>
-        <div class="container swiper ">
+        <div class="max-w-[100%] swiper ">
           <div class=" product-content">
             <div class=" swiper-wrapper">
               <?php
@@ -47,14 +47,14 @@
               foreach ($products as $product):
                 ?>
                 <div class="p-4 bg-white ourproduct swiper-slide ">
-                  <div class="grid grid-cols-2 wrap gap-4">
+                  <div class="grid grid-cols-2 gap-4 wrap">
                     <a href="product-detail.php?id=<?= $product->product_id ?>">
-                    <img class="w-full h-full" src="assets/<?= $product->product_image ?>">
+                      <img class="w-full h-full" src="assets/<?= $product->product_image ?>">
                     </a>
-                    
+
                     <div class="flex flex-col self-center gap-6 wrapper">
                       <h5 class="font-semibold"><?= $product->product_name ?></h5>
-                      <h6 class="line-clamp-3 text-justify"><?= $product->product_desc ?></h6>
+                      <h6 class="text-justify line-clamp-3"><?= $product->product_desc ?></h6>
                       <h5>Rp<?= formatNumber($product->product_price) ?></h5>
                     </div>
                   </div>
@@ -77,17 +77,16 @@
       </div>
       </div>
       <!--.. If we need navigation buttons -->
-      <div class="absolute lg:flex hidden z-10 justify-between w-full px-12 bottom-[55%] toggle">
+      <div class="absolute lg:flex hidden z-10 justify-between w-full px-1 bottom-[50%] 3xl:px-12 toggle">
         <!-- tablet to desktop -->
         <div class="relative flex items-center justify-between w-full gap-4 wrap">
           <i id="prev"
-            class="absolute bg-[#CC9B6D] text-white left-0 p-4 text-2xl transform translate-y-1/2  rounded-full lg:text-3xl ti ti-chevron-left bottom-1/2"></i>
+            class="absolute bg-[#CC9B6D] text-white left-0 p-4 text-lg 3xl:text-3xl transform translate-y-1/2  rounded-full lg:text-xl ti ti-chevron-left bottom-1/2"></i>
           <i id="next"
-            class="absolute bg-[#CC9B6D] text-white right-0 p-4 text-2xl transform translate-y-1/2  rounded-full lg:text-3xl ti ti-chevron-right bottom-1/2"></i>
+            class="absolute bg-[#CC9B6D] text-white right-0 p-4 text-lg 3xl:text-3xl transform translate-y-1/2  rounded-full lg:text-xl ti ti-chevron-right bottom-1/2"></i>
         </div>
       </div>
     </section>
-
     <section class="aboutus bg-[#CC9B6D] py-32">
       <div class="container">
         <div class="grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-5">

@@ -20,35 +20,56 @@
   <?php include "extend/login.php"; ?>
   <main class="mt-0">
     <section>
-        <div class="container grid grid-cols-10 ">
-            <div class="col-span-7 border-[1px] border-gray-300 rounded-lg p-6 relative">
+      <div class="container grid grid-cols-10 gap-4">
+        <div class="col-span-7 border-[1px] border-gray-300 rounded-lg p-6 relative">
 
-            <div class="close absolute top-1 right-4 text-red-500">
-                <a href="">X</a></div>
-          
-                    <div class="box-cart w-full flex gap-8 items-center justify-between">
-                        <div class="wrap-box flex gap-12 items-center">
-                            <div class="w-[200px] h-[150px] bg-black    ">
+          <div class="absolute text-red-500 close top-1 right-4">
+            <a href="">X</a>
+          </div>
 
-                            </div>
-                            <div class="desc-item flex flex-col gap-2.5">
-                                <h6>Hallo</h6>
-                                <h6>Hallo</h6>
-                            </div>
-                        </div>
-                        <div class="quanityDesc flex flex-col gap-2.5">
-                        <h6>Hallo</h6>
-                                <h6>Hallo</h6>
-                        </div>
-                        
+          <div class="flex items-center justify-between w-full gap-8 box-cart">
+            <div class="flex items-center gap-12 wrap-box">
+              <div class="w-[200px] h-[150px] bg-black    ">
 
-                    </div>
-
-                </div>
+              </div>
+              <div class="desc-item flex flex-col gap-2.5">
+                <h6>Hallo</h6>
+                <h6>Hallo</h6>
+              </div>
             </div>
+            <div class="quanityDesc flex flex-col gap-2.5">
+              <h6>Hallo</h6>
+              <h6>Hallo</h6>
+            </div>
+
+
+
+
+          </div>
+
+
+
         </div>
+        <div class="col-span-3 border-[1px] border-gray-300 rounded-lg p-6">
+
+          <div class="flex justify-between gap-8">
+            <div class="flex flex-col gap-3 font-semibold ringkasan">
+              <h5>Ringkasan Belanja</h5>
+              <h6>Total</h6>
+            </div>
+
+            <div class="flex flex-col gap-3 font-semibold ringkasan">
+
+              <h6>Total</h6>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      </div>
     </section>
-    
+
   </main>
   <?php include "layout/footer.php" ?>
 </body>

@@ -33,7 +33,7 @@
 
                         <img src="assets/<?= $product->product_image ?>" alt="<?= $product->product_name ?>"
                             class="h-[250px] object-cover w-full">
-                        <div class="flex flex-col gap-2.5 p-6 ">
+                        <div class="flex flex-col gap-2.5 p-6">
                             <h5 class="font-bold "><?= $product->product_name ?></h5>
                             <p class="text-gray-600 line-clamp-3"><?= $product->product_desc ?></p>
                             <div class="flex items-center justify-between ">
