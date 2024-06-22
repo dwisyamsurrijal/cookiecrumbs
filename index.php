@@ -26,7 +26,7 @@
 
         <h1 class="text-center ">Cari Cemilan Kue Kering Yang Lezat</h1>
         <h3 class="">CookieCrumbs Solusinya</h3>
-        <a href=""
+        <a href="allproduct.php"
           class="px-10 lg:py-4 py-1.5 md:mt-0   text-black uppercase transition-all duration-300 ease-in-out bg-white rounded-lg hover:bg-amber-800 hover:text-white">
           <h6>lihat produk</h6>
         </a>
@@ -39,7 +39,7 @@
           <div class=" product-content">
             <div class=" swiper-wrapper">
               <?php
-              $result = mysqli_query($conn, "SELECT * FROM product");
+              $result = mysqli_query($conn, "SELECT * FROM product WHERE product_recommend = 1  ");
               $products = [];
               while ($row = mysqli_fetch_object($result)) {
                 $products[] = $row;

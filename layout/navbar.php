@@ -8,7 +8,7 @@
             </li>
         </ul>
         <ul class="items-center hidden gap-12 uppercase md:flex">
-            <li><a href="">beranda</a></li>
+            <li><a href="index.php">beranda</a></li>
             <li><a href="">produk</a></li>
             <li><a href="">about us</a></li>
             <li><a href="">why us</a></li>

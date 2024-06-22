@@ -22,36 +22,36 @@ $productId = $_GET["id"];
 
 <body class="bg-[#f6f1e9] font-Poppins">
     <?php include "layout/navbar.php"; ?>
-    <div id="allproduct" class="container p-4 pt-6 mx-auto md:p-6">
+    <div id="allproduct" class="container p-4 pt-6 mx-auto md:p-3">
         <?php
 
         $detailProduct = query("select * from product where product_id = $productId ");
 
-        
         foreach ($detailProduct as $product) { ?>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <!-- Left Column: Product Image -->
-                <div class="bg-white rounded shadow-md">
+                <div class="bg-white rounded shadow-md md:col-span-2">
                     <img src="assets/<?= $product->product_image ?>" alt="<?= $product->product_name ?>"
                         class="object-cover w-full h-full">
                 </div>
 
                 <!-- Middle Column: Product Details -->
                 <div class="flex flex-col gap-4 p-6 bg-white rounded shadow-md">
-                    <h2 class="font-bold "><?= $product->product_name ?></h2>
-                    <p class="text-gray-600"><?= $product->product_desc ?></p>
+                    <h2 class="font-bold"><?= $product->product_name ?></h2>
                     <p class="text-xl font-semibold text-gray-600">Rp<?= formatNumber($product->product_price) ?></p>
+                    <p class="text-gray-600"><?= $product->product_desc ?></p>
                 </div>
 
                 <!-- Right Column: Quantity Controls -->
-                <div class="flex flex-col items-center gap-4 p-6 bg-white rounded shadow-md">
-                    <h3 class="font-bold">Quantity</h3>
+                <div class="flex flex-col items-center gap-4 p-3 bg-white rounded shadow-md">
+                    <h3 class="font-semibold">Atur jumlah pesanan</h3>
                     <div class="flex items-center gap-2">
-                        <button class="px-4 py-2 text-white bg-red-500 rounded">-</button>
+                        <button class="px-4 py-2 font-semibold text-black">-</button>
                         <input type="text" value="1" class="w-12 text-center border rounded">
-                        <button class="px-4 py-2 text-white bg-green-500 rounded">+</button>
+                        <button class="px-4 py-2 font-semibold text-black">+</button>
                     </div>
-                    <button class="px-6 py-2 text-white rounded bg-amber-500">Add to Cart</button>
+                    <button class="px-6 py-2 text-white rounded bg-amber-500">+Keranjang</button>
+                    <button class="px-6 py-2 text-white rounded bg-amber-500">Beli Langsung</button>
                 </div>
             </div>
         <?php } ?>
