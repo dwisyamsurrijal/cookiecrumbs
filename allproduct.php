@@ -16,7 +16,7 @@
 
 <body class="bg-[#f6f1e9] font-Poppins">
     <?php include "layout/navbar.php"; ?>
-    <section>
+    <section id="beginning">
         <div class="container flex flex-col gap-6 p-4 pt-6 mx-auto md:p-6 mb-[2000px] ">
             <h1 class="font-bold text-center">Shop Page</h1>
             <h6 class="font-light text-center md:line-clamp-2 line-clamp-2">Kue kering homemade kami dibuat dengan

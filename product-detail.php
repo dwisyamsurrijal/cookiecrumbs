@@ -22,28 +22,28 @@ $productId = $_GET["id"];
 
 <body class="bg-[#f6f1e9] font-Poppins">
     <?php include "layout/navbar.php"; ?>
-    <div id="allproduct" class="container p-4 pt-6 mx-auto md:p-3">
+    <section class="container p-4 pt-6 mx-auto md:p-3">
         <?php
 
         $detailProduct = query("select * from product where product_id = $productId ");
 
         foreach ($detailProduct as $product) { ?>
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-12">
                 <!-- Left Column: Product Image -->
-                <div class="bg-white rounded shadow-md md:col-span-2">
+                <div class="bg-white rounded shadow-md md:col-span-5">
                     <img src="assets/<?= $product->product_image ?>" alt="<?= $product->product_name ?>"
                         class="object-cover w-full h-full">
                 </div>
 
                 <!-- Middle Column: Product Details -->
-                <div class="flex flex-col gap-4 p-6 bg-white rounded shadow-md">
+                <div class="flex flex-col gap-4 p-6 bg-white rounded shadow-md md:col-span-4">
                     <h2 class="font-bold"><?= $product->product_name ?></h2>
                     <p class="text-xl font-semibold text-gray-600">Rp<?= formatNumber($product->product_price) ?></p>
-                    <p class="text-gray-600"><?= $product->product_desc ?></p>
+                    <p class="text-gray-600 text-justify"><?= $product->product_desc ?></p>
                 </div>
 
                 <!-- Right Column: Quantity Controls -->
-                <div class="flex flex-col items-center gap-4 p-3 bg-white rounded shadow-md">
+                <div class="flex flex-col items-center gap-4 p-3 bg-white rounded shadow-md md:col-span-3">
                     <h3 class="font-semibold">Atur jumlah pesanan</h3>
                     <div class="flex items-center gap-2">
                         <button class="px-4 py-2 font-semibold text-black">-</button>
@@ -54,8 +54,66 @@ $productId = $_GET["id"];
                     <button class="px-6 py-2 text-white rounded bg-amber-500">Beli Langsung</button>
                 </div>
             </div>
+
+
         <?php } ?>
-    </div>
+    </section>
+
+    <section id="produk-lainnya" class="relative ">
+      <div class="container flex flex-col gap-6 lg:gap-10 md:gap-8">
+        <h2 class="font-semibold text-center">Produk Lainnya</h2>
+        <div class="container swiper ">
+          <div class=" product-content">
+            <div class=" swiper-wrapper">
+              <?php
+              $result = mysqli_query($conn, "SELECT * FROM product WHERE product_id != $productId  ");
+              $products = [];
+              while ($row = mysqli_fetch_object($result)) {
+                $products[] = $row;
+              }
+              foreach ($products as $product):
+                ?>
+                <div class="p-4 bg-white ourproduct swiper-slide ">
+                  <div class="grid grid-cols-2 wrap gap-4">
+                    <a href="product-detail.php?id=<?= $product->product_id ?>">
+                    <img class="w-full h-full" src="assets/<?= $product->product_image ?>">
+                    </a>
+                    
+                    <div class="flex flex-col self-center gap-6 wrapper">
+                      <h5 class="font-semibold"><?= $product->product_name ?></h5>
+                      <h6 class="line-clamp-3 text-justify"><?= $product->product_desc ?></h6>
+                      <h5>Rp<?= formatNumber($product->product_price) ?></h5>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- mobile -->
+        <div class="z-10 flex w-full gap-3 mx-auto place-content-center lg:hidden toggle">
+          <i id="prev" class="p-4 bg-[#CC9B6D] text-white text-xl rounded-full ti ti-chevron-left"></i>
+          <i id="next" class="p-4 bg-[#CC9B6D] text-white text-xl rounded-full ti ti-chevron-right"></i>
+        </div>
+      </div>
+      </div>
+      <!--.. If we need navigation buttons -->
+      <div class="absolute lg:flex hidden z-10 justify-between w-full px-1 bottom-[35%] toggle">
+        <!-- tablet to desktop -->
+        <div class="relative flex items-center justify-between w-full gap-4 wrap">
+          <i id="prev"
+            class="absolute bg-[#CC9B6D] text-white left-0 p-4 text-lg transform translate-y-1/2  rounded-full lg:text-xl ti ti-chevron-left bottom-1/2"></i>
+          <i id="next"
+            class="absolute bg-[#CC9B6D] text-white right-0 p-4 text-lg transform translate-y-1/2  rounded-full lg:text-xl ti ti-chevron-right bottom-1/2"></i>
+        </div>
+      </div>
+    </section>
+
+    <?php include "layout/footer.php" ?>
+    
 </body>
+
 
 </html>

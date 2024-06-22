@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <header id="mainHeader"
-    class="fixed inset-x-0 lg:py-8 md:py-7 py-5 top-0 z-30 font-semibold text-white transition-all duration-[400ms] ease-in-out">
+    class="fixed inset-x-0 lg:py-8 md:py-7 py-5 top-0 z-30 font-semibold text-amber-500 transition-all duration-[400ms] ease-in-out">
     <nav class="container flex items-center justify-between gap-12 text-sm md:text-sm lg:text-lg">
         <ul>
             <li class="flex items-center gap-1.5">
@@ -31,7 +32,7 @@
         </ul>
     </nav>
     <div id="mobileMenu" class="overflow-hidden transition-all ease-in-out duration-400 max-h-0">
-        <ul class="md:hidden flex flex-col text-white gap-3.5 uppercase  text-sm mt-6 px-4">
+        <ul class="md:hidden flex flex-col text-[#CC9B6D] gap-3.5 uppercase  text-sm mt-6 px-4">
             <li><a href="">beranda</a></li>
             <li><a href="">produk</a></li>
             <li><a href="">about us</a></li>

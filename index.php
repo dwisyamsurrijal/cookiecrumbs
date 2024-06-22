@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <title>Tailwind CSS</title>
 </head>
 
@@ -22,7 +22,7 @@
     <section id="banner" class="relative my-0">
       <img src="assets/banner.jpg" class="object-cover w-full md:h-[900px] h-[550px]" alt="Banner Image" />
       <div
-        class="absolute flex flex-col items-center justify-center w-full h-full gap-3 px-4 font-semibold text-white transform translate-x-1/2 translate-y-1/2 bg-black lg:gap-6 bg-opacity-30 right-1/2 bottom-1/2">
+        class="absolute flex flex-col items-center justify-center w-full h-full gap-3 px-4 font-semibold text-white transform translate-x-1/2 translate-y-1/2 bg-black lg:gap-6 bg-opacity-50 right-1/2 bottom-1/2">
 
         <h1 class="text-center ">Cari Cemilan Kue Kering Yang Lezat</h1>
         <h3 class="">CookieCrumbs Solusinya</h3>
@@ -33,7 +33,7 @@
       </div>
     </section>
     <section id="produk-kami" class="relative ">
-      <div class="container flex flex-col gap-6 lg:gap-16 md:gap-8">
+      <div class="container flex flex-col gap-6 lg:gap-10 md:gap-8">
         <h2 class="font-semibold text-center">Produk Kami</h2>
         <div class="container swiper ">
           <div class=" product-content">
@@ -47,11 +47,14 @@
               foreach ($products as $product):
                 ?>
                 <div class="p-4 bg-white ourproduct swiper-slide ">
-                  <div class="grid grid-cols-2 wrap">
-                    <img class="w-[90%]" src="assets/<?= $product->product_image ?>">
+                  <div class="grid grid-cols-2 wrap gap-4">
+                    <a href="product-detail.php?id=<?= $product->product_id ?>">
+                    <img class="w-full h-full" src="assets/<?= $product->product_image ?>">
+                    </a>
+                    
                     <div class="flex flex-col self-center gap-6 wrapper">
                       <h5 class="font-semibold"><?= $product->product_name ?></h5>
-                      <h6 class="line-clamp-3"><?= $product->product_desc ?></h6>
+                      <h6 class="line-clamp-3 text-justify"><?= $product->product_desc ?></h6>
                       <h5>Rp<?= formatNumber($product->product_price) ?></h5>
                     </div>
                   </div>
@@ -84,6 +87,7 @@
         </div>
       </div>
     </section>
+
     <section class="aboutus bg-[#CC9B6D] py-32">
       <div class="container">
         <div class="grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-5">

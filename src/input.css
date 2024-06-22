@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav-scroll {
-  @apply bg-[#f6f1e9] shadow-lg text-black;
+  @apply bg-[#f6f1e9] shadow-lg text-[#CC9B6D];
 }
 
 .login-bg-active {
@@ -19,7 +19,7 @@ html {
 }
 
 section {
-  @apply md:my-20 my-12;
+  @apply md:my-28 my-12;
 }
 
 .active-nav > span:nth-child(1) {

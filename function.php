@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'cookiecrumbs');
+$conn = mysqli_connect('localhost', 'root', '', 'cookiecrumb');
 
 if (!$conn) {
     die("koneksi Gagal : " . mysqli_connect_error());
